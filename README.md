@@ -10,7 +10,7 @@ You need all dependencies required for the swift language and wget.
 The following command should install everything:
 `sudo apt-get install clang libicu-dev wget`
 
-####On Mac
+#### On Mac
 You need to install xcode required by the version of swift you intend to use.
 See xcode and macOS versions required for each release of swift [here.](https://swift.org/download/#using-downloads)
 
@@ -63,5 +63,7 @@ By default the latest release of Swift (4.0.2 as of now) will be installed. You 
 
 Supported version numbers: 4.0.2, 4.0, 3.1.1, 3.1
 
-## 👥 Contributors
-  [Ankit Goel](https://github.com/ankit1ank)
+## 👥 Contact Me
+Report a bug, Suggest improvements or just say "Hello".
+
+  [@ankitank](https://twitter.com/ankitank)
