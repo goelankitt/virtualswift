@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 write_activate() {
         ###### Create activate script and make it executable
@@ -104,7 +104,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         echo "Installing swift ... "
 
         mkdir swift
-        tar -xvf swift.tar.gz -C swift --strip-components=1
+        tar -xvf swift.tar.gz -C swift --strip-components=1  &> /dev/null
         rm swift.tar.gz
         
         # Create activate script
