@@ -1,4 +1,4 @@
-# Virtualswift - Swift virtual environment builder.
+# virtualswift - Swift virtual environment builder.
 
 Virtualswift is a tool for creating isolated 'virtual' swift environments.
 
