@@ -1,5 +1,4 @@
 # Virtualswift - Swift virtual environment builder.
----
 
 Virtualswift is a tool for creating isolated 'virtual' swift environments.
 
@@ -52,17 +51,15 @@ As of now, if you have xcode 9 beta or later, you can install only swift 4. I ha
 	source ./activate
 	```
 
-The prompt changes to indicate that the virtual environment is activated. You can deactivate the activated virtual environment.
+	The command line prompt changes to indicate that the virtual 	environment is activated.
 
-	```
-	deactivate
-	```
+3. You can deactivate the activated virtual environment.
+
+```deactivate```
 
 By default the latest release of swift(4.0.2 as of now) will be installed. You can choose a different version of swift as shown below:
 
-	```
-	virtualenv myenv 3.1.1
-	```
+```virtualenv myenv 3.1.1```
 
 ## 👥 Contributors
   [Ankit Goel](https://github.com/ankit1ank)
