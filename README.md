@@ -55,11 +55,13 @@ As of now, if you have xcode 9 beta or later, you can install only swift 4. I ha
 
 3. You can deactivate the activated virtual environment.
 
-```deactivate```
+	```deactivate```
 
-By default the latest release of swift(4.0.2 as of now) will be installed. You can choose a different version of swift as shown below:
+By default the latest release of Swift (4.0.2 as of now) will be installed. You can choose a different version of swift as shown below:
 
 ```virtualenv myenv 3.1.1```
+
+Supported version numbers: 4.0.2, 4.0, 3.1.1, 3.1
 
 ## 👥 Contributors
   [Ankit Goel](https://github.com/ankit1ank)
