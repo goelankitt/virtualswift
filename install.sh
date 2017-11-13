@@ -1,5 +1,4 @@
 #!/bin/bash
 
-curl -O https://github.com/ankit1ank/virtualswift/blob/master/virtualswift 
-sudo mv ./virtualswift /usr/local/bin
+curl -o /usr/local/bin/virtualswift https://github.com/ankit1ank/virtualswift/blob/master/virtualswift
 chmod +x /usr/local/bin/virtualswift
