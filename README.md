@@ -19,9 +19,33 @@ As of now, if you have xcode 9 beta or later, you can install only swift 4. I ha
 
 ## 📚 Installation Steps
 
+### Automatic Installation
+
 1. Run `bash <(curl -Ls https://github.com/ankit1ank/virtualswift/raw/master/install.sh)`
 
 2. Verify installation by running `which virtualswift`. If the output looks like the following the installation is successful.
+
+	```
+	/usr/local/bin/virtualswift
+	```
+
+### Manual Installation
+
+1. Clone the repo
+
+	```
+	git clone https://github.com/ankit1ank/virtualswift
+	```
+
+2. Copy the script to any folder that's in your path variable.
+
+	```
+	cd virtualswift
+	sudo cp ./virtualswift /usr/local/bin
+	chmod +x /usr/local/bin/virtualenv
+	rm -rf virtualswift # Delete the cloned repo
+	```
+3.  Verify installation by running `which virtualswift`. If the output looks like the following the installation is successful.
 
 	```
 	/usr/local/bin/virtualswift
