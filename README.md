@@ -50,6 +50,14 @@ As of now, if you have xcode 9 beta or later, you can install only swift 4. I ha
 	```
 	/usr/local/bin/virtualswift
 	```
+	
+### Unistallation
+
+Simply, remove the script to uninstall.
+
+```
+rm 	/usr/local/bin/virtualswift
+```
 
 ## 📚 Usage
 1. Create a new virtual environment
