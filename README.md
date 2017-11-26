@@ -12,7 +12,7 @@ The following command should install everything:
 `sudo apt-get install clang libicu-dev wget`
 
 #### On Mac
-You need to install xcode required by the version of swift you intend to use.
+You need to install wget and xcode required by the version of swift you intend to use.
 See xcode and macOS versions required for each release of swift [here.](https://swift.org/download/#using-downloads)
 
 As of now, if you have xcode 9 beta or later, you can install only swift 4. I have not figured out a workaround for running multiple versions of swift in different virtual environments on a mac machine. However, on ubuntu you can run different versions of swift in different virtual environments.
