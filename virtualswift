@@ -100,7 +100,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
 
         # Ubuntu specific download and setup
-        wget $DOWNLOAD_URL -O swift.tar.gz
+        curl -o swift.tar.gz $DOWNLOAD_URL
         echo "Installing swift ... "
 
         mkdir swift
@@ -121,7 +121,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	esac
         
         # MacOS Specific Installation
-        wget $DOWNLOAD_URL -O swift.pkg
+        curl -o swift.pkg $DOWNLOAD_URL
         echo "Installing swift ... "
 
         mkdir swift
