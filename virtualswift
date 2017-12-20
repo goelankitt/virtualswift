@@ -64,9 +64,11 @@ if [ "$#" -ne 1 ] && [ "$#" -ne 2 ] ; then
 fi
 
 # Save swift version if number of arguments is two
-SPECIFIED_RELEASE=4.0.2
+SPECIFIED_RELEASE=4.0.3
 if [ "$#" -eq 2 ] ; then
-        if [ "$2" == 4.0.2 ] ; then
+        if [ "$2" == 4.0.3 ] ; then
+                SPECIFIED_RELEASE="4.0.3"
+        elif [ "$2" == 4.0.2 ] ; then
                 SPECIFIED_RELEASE="4.0.2"
         elif [ "$2" == 4.0 ] ; then
                 SPECIFIED_RELEASE="4.0"
@@ -119,7 +121,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
                         echo "OS Not Supported"
                         ;;
 	esac
-        
+
         # MacOS Specific Installation
         curl -o swift.pkg $DOWNLOAD_URL
         echo "Installing swift ... "
