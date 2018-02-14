@@ -58,28 +58,34 @@ write_activate() {
 
 
 # If correct number of command line arguments
-if [ "$#" -ne 1 ] && [ "$#" -ne 2 ] ; then
+if [ "$#" -ne 1 ] && [ "$#" -ne 2 ] && [ "$#" -ne 3 ] ; then
   echo "Usage: virtualswift env_name" >&2
   exit 1
 fi
 
+if [[ "$2" == "-u" ]] ; then
+        DOWNLOAD_URL=$3
+fi
+
 # Save swift version if number of arguments is two
 SPECIFIED_RELEASE=4.0.3
-if [ "$#" -eq 2 ] ; then
-        if [ "$2" == 4.0.3 ] ; then
-                SPECIFIED_RELEASE="4.0.3"
-        elif [ "$2" == 4.0.2 ] ; then
-                SPECIFIED_RELEASE="4.0.2"
-        elif [ "$2" == 4.0 ] ; then
-                SPECIFIED_RELEASE="4.0"
-        elif [ "$2" == 3.1.1 ] ; then
-                SPECIFIED_RELEASE="3.1.1"
-        elif [ "$2" == 3.1 ] ; then
-                SPECIFIED_RELEASE="3.1"
-        else 
-                echo "Invalid release specified." >&2
-                echo "Supported swift releases: 4.0.2, 4.0, 3.1.1, 3.1" >&2
-                exit 1
+if [ "$#" -eq 3 ] ; then
+        if [[ "$2" == "-v" ]] ; then
+                if [ "$2" == 4.0.3 ] ; then
+                        SPECIFIED_RELEASE="4.0.3"
+                elif [ "$2" == 4.0.2 ] ; then
+                        SPECIFIED_RELEASE="4.0.2"
+                elif [ "$2" == 4.0 ] ; then
+                        SPECIFIED_RELEASE="4.0"
+                elif [ "$2" == 3.1.1 ] ; then
+                        SPECIFIED_RELEASE="3.1.1"
+                elif [ "$2" == 3.1 ] ; then
+                        SPECIFIED_RELEASE="3.1"
+                else 
+                        echo "Invalid release specified." >&2
+                        echo "Supported swift releases: 4.0.2, 4.0, 3.1.1, 3.1" >&2
+                        exit 1
+                fi
         fi
 fi
 
@@ -90,17 +96,19 @@ echo "Downloading swift .... "
 
 # Check OS and specify DOWNLOAD URL accordingly
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        # Only Ubuntu 16.10, 16.04, 14.04 supported.
-        if [[ `lsb_release -rs` == "16.10" ]]; then
-                DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1610/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu16.10.tar.gz"
-        elif [[ `lsb_release -rs` == "16.04" ]]; then
-                DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1604/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu16.04.tar.gz"
-        elif [[ `lsb_release -rs` == "14.04" ]]; then
-                DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1404/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu14.04.tar.gz"
-        else
-                echo "OS Not Supported"
+        if [[ "$2" == "-v" ]] ; then
+                # Only Ubuntu 16.10, 16.04, 14.04 supported.
+                if [[ `lsb_release -rs` == "16.10" ]]; then
+                        DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1610/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu16.10.tar.gz"
+                elif [[ `lsb_release -rs` == "16.04" ]]; then
+                        DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1604/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu16.04.tar.gz"
+                elif [[ `lsb_release -rs` == "14.04" ]]; then
+                        DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/ubuntu1404/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-ubuntu14.04.tar.gz"
+                else
+                        echo "OS Not Supported"
+                fi
         fi
-
+        
         # Ubuntu specific download and setup
         curl -o swift.tar.gz $DOWNLOAD_URL
         echo "Installing swift ... "
@@ -113,14 +121,16 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         write_activate
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        case `sw_vers -productVersion` in
-	 	10.1*)
-                        DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/xcode/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-osx.pkg"
-                        ;;
- 		*)
-                        echo "OS Not Supported"
-                        ;;
-	esac
+        if [[ "$2" == "-v" ]] ; then
+                case `sw_vers -productVersion` in
+	 	        10.1*)
+                                DOWNLOAD_URL="https://swift.org/builds/swift-${SPECIFIED_RELEASE}-release/xcode/swift-${SPECIFIED_RELEASE}-RELEASE/swift-${SPECIFIED_RELEASE}-RELEASE-osx.pkg"
+                                ;;
+ 		        *)
+                                echo "OS Not Supported"
+                                ;;
+	        esac
+        fi
 
         # MacOS Specific Installation
         curl -o swift.pkg $DOWNLOAD_URL
