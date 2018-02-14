@@ -58,7 +58,7 @@ write_activate() {
 
 
 # If correct number of command line arguments
-if [ "$#" -ne 1 ] && [ "$#" -ne 2 ] && [ "$#" -ne 3 ] ; then
+if [ "$#" -ne 1 ] && [ "$#" -ne 3 ] ; then
   echo "Usage: virtualswift env_name" >&2
   exit 1
 fi
@@ -108,7 +108,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
                         echo "OS Not Supported"
                 fi
         fi
-        
+
         # Ubuntu specific download and setup
         curl -o swift.tar.gz $DOWNLOAD_URL
         echo "Installing swift ... "
