@@ -84,6 +84,7 @@ By default the latest release of Swift (4.0.2 as of now) will be installed. You 
 ```virtualswift myenv -v 3.1.1```
 
 Or you can download any development or release version of swift by specifying the download url from swift.org:
+
 ```virtualswift myenv -u https://swift.org/builds/swift-4.1-branch/xcode/swift-4.1-DEVELOPMENT-SNAPSHOT-2018-02-13-a/swift-4.1-DEVELOPMENT-SNAPSHOT-2018-02-13-a-osx.pkg```
 
 Supported version numbers: 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1
