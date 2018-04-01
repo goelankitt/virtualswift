@@ -66,7 +66,9 @@ fi
 # Save swift version if number of arguments is two
 SPECIFIED_RELEASE=4.0.3
 if [ "$#" -eq 2 ] ; then
-        if [ "$2" == 4.0.3 ] ; then
+        if [ "$2" == 4.1 ] ; then
+                SPECIFIED_RELEASE="4.1"
+        elif [ "$2" == 4.0.3 ] ; then
                 SPECIFIED_RELEASE="4.0.3"
         elif [ "$2" == 4.0.2 ] ; then
                 SPECIFIED_RELEASE="4.0.2"
@@ -78,7 +80,7 @@ if [ "$#" -eq 2 ] ; then
                 SPECIFIED_RELEASE="3.1"
         else 
                 echo "Invalid release specified." >&2
-                echo "Supported swift releases: 4.0.2, 4.0, 3.1.1, 3.1" >&2
+                echo "Supported swift releases: 4.1, 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1" >&2
                 exit 1
         fi
 fi
