@@ -125,21 +125,18 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	esac
 
         # MacOS Specific Installation
-        curl -o swift.pkg $DOWNLOAD_URL
+        curl -o snapshot.pkg $DOWNLOAD_URL
         echo "Installing swift ... "
 
-        mkdir swift
-        xar -xf swift.pkg &> /dev/null
-        mv `(find swift-* -print &) | head -n 1` temp.pkg
-        rm Distribution
-        cd temp.pkg
-        cp Payload ../swift/Payload
-        cd ../swift/
-        tar xvf Payload &> /dev/null
-        rm Payload
+        pkgutil --expand snapshot.pkg snapshot
+        cd ./snapshot
+        snapshot=`(find swift-* -print &) | head -n 1`
+        snapshot_payload="$snapshot/Payload"
+        tar xf $snapshot_payload
+        rm -rf $snapshot
         cd ..
-        rm -rf temp.pkg
-        rm swift.pkg
+        mv ./snapshot ./swift
+        rm snapshot.pkg
 
         # Create activate script
         write_activate
