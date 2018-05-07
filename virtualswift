@@ -64,7 +64,7 @@ if [ "$#" -ne 1 ] && [ "$#" -ne 2 ] ; then
 fi
 
 # Save swift version if number of arguments is two
-SPECIFIED_RELEASE=4.0.3
+SPECIFIED_RELEASE=4.1
 if [ "$#" -eq 2 ] ; then
         if [ "$2" == 4.0.3 ] ; then
                 SPECIFIED_RELEASE="4.0.3"
