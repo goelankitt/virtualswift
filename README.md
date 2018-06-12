@@ -79,11 +79,11 @@ rm 	/usr/local/bin/virtualswift
 
 	```deactivate```
 
-By default the latest release of Swift (4.1 as of now) will be installed. You can choose a different version of swift as shown below:
+By default the latest release of Swift (4.1.2 as of now) will be installed. You can choose a different version of swift as shown below:
 
 ```virtualswift myenv 3.1.1```
 
-Supported version numbers: 4.1, 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1
+Supported version numbers: 4.1.2, 4.1.1, 4.1, 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1
 
 ## 👥 Contact Me
 Report a bug, Suggest improvements or just say "Hello".
