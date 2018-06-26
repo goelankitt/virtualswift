@@ -1,6 +1,6 @@
 # virtualswift - Swift virtual environment builder. [![Help Contribute to Open Source](https://www.codetriage.com/ankit1ank/virtualswift/badges/users.svg)](https://www.codetriage.com/ankit1ank/virtualswift)
 
-Virtualswift is a tool for creating isolated 'virtual' swift environments.
+Virtualswift is a tool for creating isolated 'virtual' swift environments. [Read the medium article here.](https://medium.com/@ankitank/virtualswift-virtual-environments-for-swift-a83cce30be47)
 
 If you are familiar with python, then virtualswift is to swift what virtualenv is to python.
 
@@ -79,11 +79,11 @@ rm 	/usr/local/bin/virtualswift
 
 	```deactivate```
 
-By default the latest release of Swift (4.1 as of now) will be installed. You can choose a different version of swift as shown below:
+By default the latest release of Swift (4.1.2 as of now) will be installed. You can choose a different version of swift as shown below:
 
 ```virtualswift myenv 3.1.1```
 
-Supported version numbers: 4.1, 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1
+Supported version numbers: 4.1.2, 4.1.1, 4.1, 4.0.3, 4.0.2, 4.0, 3.1.1, 3.1
 
 ## 👥 Contact Me
 Report a bug, Suggest improvements or just say "Hello".
